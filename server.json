@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.alpinedataworks/adw-intelligence-server",
+  "title": "AlpineDataWorks Intelligence Server",
+  "description": "Agent-ready economic, market & geo-health intelligence — 163 MCP tools, 155 driver-backed indices.",
+  "version": "0.3.3",
+  "websiteUrl": "https://alpinedataworks.com",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.alpinedataworks.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer API key. Free demo: 'Bearer adw_free_demo'. Get your own at https://api.alpinedataworks.com/signup. Call adw.catalog first, then adw.adw_NNN.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
