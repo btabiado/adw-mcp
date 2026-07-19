@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.alpinedataworks/adw-intelligence-server",
   "title": "AlpineDataWorks Intelligence Server",
-  "description": "Agent-ready economic, market & geo-health intelligence — 163 MCP tools, 155 driver-backed indices.",
-  "version": "0.3.3",
+  "description": "Agent-ready economic, market & geo-health intelligence — 317 MCP tools, 308 driver-backed indices.",
+  "version": "0.3.6",
   "websiteUrl": "https://alpinedataworks.com",
   "remotes": [
     {
