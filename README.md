@@ -2,7 +2,7 @@
 
 **Agent-ready economic, market, and geo-health intelligence, exposed as Model Context Protocol tools.**
 
-The AlpineDataWorks Intelligence Server gives any MCP-capable AI agent (Claude, Cursor, ChatGPT, and others) direct, callable access to **317 tools** backed by **308 indices driver-based intelligence indices** — every one computed from free, public, authoritative data (FRED, Census, BLS, BEA, EIA, USGS, NOAA, openFDA, CDC PLACES, and more).
+The AlpineDataWorks Intelligence Server gives any MCP-capable AI agent (Claude, Cursor, ChatGPT, and others) direct, callable access to **313 tools** backed by **310 driver-based intelligence indices** — every one computed from free, public, authoritative data (FRED, Census, BLS, BEA, EIA, USGS, NOAA, openFDA, CDC PLACES, and more).
 
 It is a **remote, hosted server** — nothing to install or run. Point your client at the endpoint and start calling tools.
 
