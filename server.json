@@ -2,9 +2,21 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.alpinedataworks/adw-intelligence-server",
   "title": "AlpineDataWorks Intelligence Server",
-  "description": "Agent-ready economic, market & geo-health intelligence — 313 MCP tools, 310 driver-backed indices.",
-  "version": "0.3.7",
-  "websiteUrl": "https://alpinedataworks.com",
+  "description": "Economic, market & geo-health intelligence for AI agents: 310 scored indices as 314 MCP tools.",
+  "version": "0.3.9",
+  "websiteUrl": "https://alpinedataworks.com/docs",
+  "repository": {
+    "url": "https://github.com/btabiado/adw-mcp",
+    "source": "github",
+    "id": "1288194982"
+  },
+  "icons": [
+    {
+      "src": "https://alpinedataworks.com/favicon.png",
+      "mimeType": "image/png",
+      "sizes": ["256x256"]
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",
@@ -12,9 +24,18 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer API key. Free demo: 'Bearer adw_free_demo'. Get your own at https://api.alpinedataworks.com/signup. Call adw.catalog first, then adw.adw_NNN.",
+          "description": "Your AlpineDataWorks API key as a Bearer token. Try the shared, rate-limited demo key adw_free_demo, or get a free key (1,000 credits) at https://api.alpinedataworks.com/signup. tools/list and adw.sample work without a key.",
+          "value": "Bearer {api_key}",
           "isRequired": true,
-          "isSecret": true
+          "isSecret": true,
+          "variables": {
+            "api_key": {
+              "description": "AlpineDataWorks API key (starts with adw_). Demo: adw_free_demo",
+              "placeholder": "adw_free_demo",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
         }
       ]
     }
