@@ -2,7 +2,7 @@
 
 **Economic, market and geo-health intelligence for AI agents, as Model Context Protocol tools.**
 
-AlpineDataWorks gives any MCP client (Claude Code, Cursor, VS Code, Windsurf, ChatGPT and others) **314 tools** over **310 scored intelligence indices**. Each answer is a 0–100 score with its drivers, confidence, freshness and source lineage, computed from public, authoritative data (FRED, Census, BLS, BEA, EIA, USGS, NOAA, openFDA, CDC PLACES, EPA and more).
+AlpineDataWorks gives any MCP client (Claude Code, Cursor, VS Code, Windsurf, ChatGPT and others) **319 tools** over **315 scored intelligence indices**. Each answer is a 0–100 score with its drivers, confidence, freshness and source lineage, computed from public, authoritative data (FRED, Census, BLS, BEA, EIA, USGS, NOAA, openFDA, CDC PLACES, EPA and more).
 
 It is a **hosted, remote server**: there is nothing to install or run.
 
@@ -76,7 +76,7 @@ Then, from your agent:
 
 ## What you get
 
-**314 tools = 310 index tools + 4 utilities.**
+**319 tools = 315 index tools + 4 utilities.**
 
 | Domain | Examples |
 |---|---|
@@ -101,7 +101,7 @@ Every tool has a `title` and MCP safety annotations (`readOnlyHint`, plus `destr
 
 ## Pricing and credits
 
-One credit model across all 310 indices, on REST and MCP alike. Full details: https://alpinedataworks.com/pricing
+One credit model across all 315 indices, on REST and MCP alike. Full details: https://alpinedataworks.com/pricing
 
 - **Free account**: API key once you confirm your email, **1,000 free credits** (about 333 standard calls), no card. Caps: 1,000 requests a day, 3,000 a month.
 - **Pay as you go**: top up from $10 (up to $2,000) at 12–15 credits per $1. Credits never expire.

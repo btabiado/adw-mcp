@@ -2,26 +2,26 @@
 
 How to list or update the AlpineDataWorks MCP server in public directories. Nothing here has been submitted or published yet. Each step is yours to run.
 
-Checked against each directory's docs on 2026-11-19. Sources are at the bottom.
+Checked against each directory's docs on 2026-11-19; counts and directory status refreshed 2026-11-22 from a live `tools/list` (319 tools) and `adw.catalog` (315 indices). Sources are at the bottom.
 
 ## 0. Before you start
 
-- [ ] Merge the adw-api PR `feat/mcp-listing-ready` and deploy it. After that the live server reports version `0.3.9` (today it still says `0.3.0`). Check:
+- [x] The adw-api change is deployed: the live server already reports version `0.3.9` (checked 2026-11-22). Re-check:
   ```bash
   curl -s https://api.alpinedataworks.com/.well-known/mcp.json | grep -o '"version":"[^"]*"' | head -1
   ```
 - [ ] Merge this repo's PR, then `git pull` on your laptop.
-- [ ] Update this repo's GitHub description (it still says 163 tools):
+- [ ] Update this repo's GitHub description (it still says 163 tools / 155 indices):
   ```bash
   gh repo edit btabiado/adw-mcp \
-    --description "Remote MCP server: 314 tools over 310 economic, market & geo-health intelligence indices for AI agents." \
+    --description "Remote MCP server: 319 tools over 315 economic, market & US geo-health intelligence indices for AI agents." \
     --homepage https://alpinedataworks.com/docs \
     --add-topic mcp --add-topic mcp-server --add-topic model-context-protocol --add-topic economic-data --add-topic public-health
   ```
 
 ## 1. Official MCP Registry (update the existing listing to 0.3.9)
 
-You are already listed as `com.alpinedataworks/adw-intelligence-server`. The newest published version is `0.3.8` (Oct 19). Published versions can't be changed, so this repo's `server.json` is now `0.3.9`.
+You are already listed as `com.alpinedataworks/adw-intelligence-server`. The newest published version is `0.3.8` (Oct 19). Published versions can't be changed, so this repo's `server.json` is now `0.3.9`, the same version the live server reports in its `initialize` handshake. `0.3.9` has never been published, so it is free to use. The registry entry still says "317 MCP tools, 309 driver-backed indices"; `0.3.9` says 315 indices and 319 tools, which is what the live server serves.
 
 Your login uses **DNS verification**, and the TXT record is already live on `alpinedataworks.com` (`v=MCPv1; k=ed25519; p=NI2e9YCl…`). You need the `key.pem` you made in July. Don't switch to GitHub login: that only allows `io.github.btabiado/…` names, which would create a second, separate listing. No `/.well-known` file is needed on the API host, because the DNS record already covers it.
 
@@ -68,9 +68,9 @@ When OAuth is live:
 | Portal step | What to enter |
 |---|---|
 | **1. Connection** | `https://api.alpinedataworks.com/mcp`, **Universal URL** |
-| **2. Tools** | Syncs automatically. Expect 312 read-only and 2 write (`adw.feedback`, `adw.alerts`), with no missing-annotation flags |
+| **2. Tools** | Syncs automatically. Expect 317 read-only and 2 write (`adw.feedback`, `adw.alerts`), with no missing-annotation flags |
 | **3. Listing: name** | `AlpineDataWorks Intelligence` |
-| **3. Listing: one-liner** (≤200) | `Decision-grade economic, market and US geo-health intelligence: 310 scored indices with drivers, confidence and sources, ready for Claude to query.` |
+| **3. Listing: one-liner** (≤200) | `Decision-grade economic, market and US geo-health intelligence: 315 scored indices with drivers, confidence and sources, ready for Claude to query.` |
 | **3. Listing: description** (≤2,000) | The long description below |
 | **3. Listing: categories** (1–5) | Pick the closest offered: Data & Analytics, Finance, Health, Research |
 | **3. Listing: documentation URL** | `https://alpinedataworks.com/docs` |
@@ -87,7 +87,7 @@ When OAuth is live:
 
 **Long description (paste as is):**
 
-> AlpineDataWorks turns public, authoritative data into decision-grade intelligence that Claude can query directly. Each of the 310 indices returns a 0–100 score with its top drivers, confidence, freshness and source lineage, so Claude can explain why a number moved rather than just quoting it.
+> AlpineDataWorks turns public, authoritative data into decision-grade intelligence that Claude can query directly. Each of the 315 indices returns a 0–100 score with its top drivers, confidence, freshness and source lineage, so Claude can explain why a number moved rather than just quoting it.
 >
 > Coverage spans three domains:
 > • Economic: inflation pressure, labor-market slack, consumer wallet-share, pricing power and recession-risk composites.
@@ -114,21 +114,19 @@ After you submit, Anthropic scans the submission and usually lists it as a **Com
 
 - [ ] Sign in at https://glama.ai with GitHub and find "AlpineDataWorks". If it isn't claimed, use **Claim ownership**. If it is, re-run the claim or refresh flow so Glama picks up the new README and version.
 - [ ] On the listing, set the `Authorization: Bearer adw_free_demo` header for inspection, so Glama's checks can call tools.
+- Today the listing is unclaimed and graded **B (3.3/5)**. It loses points for numeric tool names (`adw_adw_591` and so on), overlapping tools and tool count. Claiming it lets you edit the listing and re-run the checks after the registry update.
 
-## 4. Smithery (now part of Arcade)
+## 4. Smithery
 
-Smithery lists remote servers by URL: it proxies to your server and doesn't host it.
+Smithery shut down its service on 2026-10-31. Nothing to do.
 
-- [ ] Sign in at https://smithery.ai and check whether AlpineDataWorks is already listed. If not, choose **Publish** / **Add server**, enter `https://api.alpinedataworks.com/mcp`, and add a required config field `Authorization` with the description `Bearer <your AlpineDataWorks API key>; demo: Bearer adw_free_demo`.
-- Smithery calls from Cloudflare Workers. Don't block it with bot rules, and keep returning `401` (not `403`) for a missing key.
+## 5. PulseMCP (refresh the stale description)
 
-## 5. PulseMCP
-
-Nothing to do. PulseMCP isn't taking submissions right now, and it says it will pick up servers from the Official MCP Registry automatically (step 1).
+You are listed as "AlpineDataWorks Intelligence" (since 5 Jul 2026), but the description still says "155+". PulseMCP's new-server submissions are paused, and it syncs from the Official MCP Registry, so step 1 should refresh it. If it still says "155+" a week after step 1, ask them to refresh it through https://www.pulsemcp.com/submit or by email to hello@pulsemcp.com.
 
 ## 6. mcp.so
 
-- [ ] Go to https://mcp.so and use **Submit**, or open an issue on its GitHub repo. Paste:
+- [ ] Go to https://mcp.so/submit, sign in, and pick **Remote Server**. Use the free submission (the $39 paid option is optional). Paste:
   - Name: `AlpineDataWorks Intelligence`
   - URL: `https://github.com/btabiado/adw-mcp`
   - Server: `https://api.alpinedataworks.com/mcp` (Streamable HTTP, `Authorization: Bearer adw_free_demo`)
@@ -137,8 +135,8 @@ Nothing to do. PulseMCP isn't taking submissions right now, and it says it will 
 ## Reusable text
 
 - **Name**: AlpineDataWorks Intelligence
-- **Short description (≤100, registry)**: Economic, market & geo-health intelligence for AI agents: 310 scored indices as 314 MCP tools.
-- **One-liner (≤200)**: Decision-grade economic, market and US geo-health intelligence: 310 scored indices with drivers, confidence and sources, ready for Claude to query.
+- **Short description (≤100, registry)**: Economic, market & US geo-health intelligence for AI agents: 315 scored indices as 319 MCP tools.
+- **One-liner (≤200)**: Decision-grade economic, market and US geo-health intelligence: 315 scored indices with drivers, confidence and sources, ready for Claude to query.
 - **Endpoint**: https://api.alpinedataworks.com/mcp (Streamable HTTP)
 - **Auth**: `Authorization: Bearer <key>`; demo `adw_free_demo`; free key at https://api.alpinedataworks.com/signup
 - **Logo**: https://alpinedataworks.com/favicon.png (256×256 PNG); social card https://alpinedataworks.com/og.png (1200×630)
@@ -160,5 +158,4 @@ Nothing to do. PulseMCP isn't taking submissions right now, and it says it will 
 - Claude: authentication for connectors: https://claude.com/docs/connectors/building/authentication
 - Claude: who can submit: https://claude.com/docs/directory/publish
 - Glama, glama.json: https://glama.ai/blog/2025-07-08-what-is-glamajson
-- Smithery publish docs (as indexed; the page returned 404 on 2026-11-19 after the Arcade merger, so check the site itself): https://smithery.ai/docs/build/publish
 - PulseMCP submissions: https://www.pulsemcp.com/submit
