@@ -2,7 +2,7 @@
 
 How to list or update the AlpineDataWorks MCP server in public directories. Nothing here has been submitted or published yet. Each step is yours to run.
 
-Checked against each directory's docs on 2026-11-19; counts and directory status refreshed 2026-11-22 from a live `tools/list` (319 tools) and `adw.catalog` (315 indices). Sources are at the bottom.
+Checked against each directory's docs on 2026-11-19; counts and directory status refreshed 2026-11-22 from a live `tools/list` (322 tools) and `adw.catalog` (315 indices). Sources are at the bottom.
 
 ## 0. Before you start
 
@@ -14,14 +14,14 @@ Checked against each directory's docs on 2026-11-19; counts and directory status
 - [ ] Update this repo's GitHub description (it still says 163 tools / 155 indices):
   ```bash
   gh repo edit btabiado/adw-mcp \
-    --description "Remote MCP server: 319 tools over 315 economic, market & US geo-health intelligence indices for AI agents." \
+    --description "Remote MCP server: 322 tools over 315 economic, market & US geo-health intelligence indices for AI agents." \
     --homepage https://alpinedataworks.com/docs \
     --add-topic mcp --add-topic mcp-server --add-topic model-context-protocol --add-topic economic-data --add-topic public-health
   ```
 
 ## 1. Official MCP Registry (update the existing listing to 0.3.9)
 
-You are already listed as `com.alpinedataworks/adw-intelligence-server`. The newest published version is `0.3.8` (Oct 19). Published versions can't be changed, so this repo's `server.json` is now `0.3.9`, the same version the live server reports in its `initialize` handshake. `0.3.9` has never been published, so it is free to use. The registry entry still says "317 MCP tools, 309 driver-backed indices"; `0.3.9` says 315 indices and 319 tools, which is what the live server serves.
+You are already listed as `com.alpinedataworks/adw-intelligence-server`. The newest published version is `0.3.8` (Oct 19). Published versions can't be changed, so this repo's `server.json` is now `0.3.9`, the same version the live server reports in its `initialize` handshake. `0.3.9` has never been published, so it is free to use. The registry entry still says "317 MCP tools, 309 driver-backed indices"; `0.3.9` says 315 indices and 322 tools, which is what the live server serves.
 
 Your login uses **DNS verification**, and the TXT record is already live on `alpinedataworks.com` (`v=MCPv1; k=ed25519; p=NI2e9YCl…`). You need the `key.pem` you made in July. Don't switch to GitHub login: that only allows `io.github.btabiado/…` names, which would create a second, separate listing. No `/.well-known` file is needed on the API host, because the DNS record already covers it.
 
@@ -68,7 +68,7 @@ When OAuth is live:
 | Portal step | What to enter |
 |---|---|
 | **1. Connection** | `https://api.alpinedataworks.com/mcp`, **Universal URL** |
-| **2. Tools** | Syncs automatically. Expect 317 read-only and 2 write (`adw.feedback`, `adw.alerts`), with no missing-annotation flags |
+| **2. Tools** | Syncs automatically. Expect 320 read-only and 2 write (`adw.feedback`, `adw.alerts`), with no missing-annotation flags |
 | **3. Listing: name** | `AlpineDataWorks Intelligence` |
 | **3. Listing: one-liner** (≤200) | `Decision-grade economic, market and US geo-health intelligence: 315 scored indices with drivers, confidence and sources, ready for Claude to query.` |
 | **3. Listing: description** (≤2,000) | The long description below |
@@ -135,7 +135,7 @@ You are listed as "AlpineDataWorks Intelligence" (since 5 Jul 2026), but the des
 ## Reusable text
 
 - **Name**: AlpineDataWorks Intelligence
-- **Short description (≤100, registry)**: Economic, market & US geo-health intelligence for AI agents: 315 scored indices as 319 MCP tools.
+- **Short description (≤100, registry)**: Economic, market & US geo-health intelligence plus a worldwide API catalog, as 322 MCP tools.
 - **One-liner (≤200)**: Decision-grade economic, market and US geo-health intelligence: 315 scored indices with drivers, confidence and sources, ready for Claude to query.
 - **Endpoint**: https://api.alpinedataworks.com/mcp (Streamable HTTP)
 - **Auth**: `Authorization: Bearer <key>`; demo `adw_free_demo`; free key at https://api.alpinedataworks.com/signup

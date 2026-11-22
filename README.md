@@ -2,7 +2,7 @@
 
 **Economic, market and geo-health intelligence for AI agents, as Model Context Protocol tools.**
 
-AlpineDataWorks gives any MCP client (Claude Code, Cursor, VS Code, Windsurf, ChatGPT and others) **319 tools** over **315 scored intelligence indices**. Each answer is a 0–100 score with its drivers, confidence, freshness and source lineage, computed from public, authoritative data (FRED, Census, BLS, BEA, EIA, USGS, NOAA, openFDA, CDC PLACES, EPA and more).
+AlpineDataWorks gives any MCP client (Claude Code, Cursor, VS Code, Windsurf, ChatGPT and others) **322 tools** over **315 scored intelligence indices** plus a worldwide API catalog lookup. Each answer is a 0–100 score with its drivers, confidence, freshness and source lineage, computed from public, authoritative data (FRED, Census, BLS, BEA, EIA, USGS, NOAA, openFDA, CDC PLACES, EPA and more).
 
 It is a **hosted, remote server**: there is nothing to install or run.
 
@@ -76,7 +76,7 @@ Then, from your agent:
 
 ## What you get
 
-**319 tools = 315 index tools + 4 utilities.**
+**322 tools = 315 index tools + 4 utilities + 3 catalog lookup tools** (`adw.catalog_search`, `adw.catalog_get`, and the free, keyless `adw.catalog_stats` over ~94k APIs, data portals, services and MCP servers).
 
 | Domain | Examples |
 |---|---|
