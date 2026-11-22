@@ -76,7 +76,7 @@ Then, from your agent:
 
 ## What you get
 
-**322 tools = 315 index tools + 4 utilities + 3 catalog lookup tools** (`adw.catalog_search`, `adw.catalog_get`, and the free, keyless `adw.catalog_stats` over ~94k APIs, data portals, services and MCP servers).
+**322 tools = 315 index tools + 4 utilities + 3 catalog lookup tools** (`adw.catalog_search`, `adw.catalog_get`, and the free, keyless `adw.catalog_stats` over ~93k APIs, data portals, services and MCP servers).
 
 | Domain | Examples |
 |---|---|
