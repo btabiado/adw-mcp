@@ -10,7 +10,7 @@ It is a **hosted, remote server**: there is nothing to install or run.
 |---|---|
 | **Endpoint** | `https://api.alpinedataworks.com/mcp` (Streamable HTTP) |
 | **Auth** | `Authorization: Bearer <api key>` |
-| **Free demo key** | `adw_free_demo` (shared, rate-limited) |
+| **Free demo key** | `adw_free_demo` (shared, rate-limited; not accepted by `adw.catalog_search` or `adw.catalog_get`) |
 | **Free account key** | https://api.alpinedataworks.com/signup (1,000 free credits, no card) |
 | **Registry name** | `com.alpinedataworks/adw-intelligence-server` ([Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=com.alpinedataworks)) |
 | **Docs** | https://alpinedataworks.com/docs |
@@ -70,13 +70,13 @@ Then, from your agent:
 2. **Query**: call the tool for the index you want, for example `adw.adw_001` (Crypto Market Sentiment & Volatility Index) or `adw.health_risk` with a ZIP.
 3. **Go further**: replace `adw_free_demo` with your own key for your own limits and credits.
 
-`tools/list` and `adw.sample` work with no key at all. Claude.ai and Claude Desktop custom connectors need OAuth sign-in, which is not switched on yet; use Claude Code or another client that can send a header in the meantime.
+`tools/list`, `adw.sample` and `adw.catalog_stats` work with no key at all. Claude.ai and Claude Desktop custom connectors need OAuth sign-in, which is not switched on yet; use Claude Code or another client that can send a header in the meantime.
 
 ---
 
 ## What you get
 
-**322 tools = 315 index tools + 4 utilities + 3 catalog lookup tools** (`adw.catalog_search`, `adw.catalog_get`, and the free, keyless `adw.catalog_stats` over ~93k APIs, data portals, services and MCP servers).
+**322 tools = 315 index tools + 4 utilities + 3 catalog lookup tools** (`adw.catalog_search`, `adw.catalog_get`, and the free, keyless `adw.catalog_stats` over the worldwide master catalog of ~93k APIs, data portals, services and MCP servers: 93,038 records as of 2026-11-22).
 
 | Domain | Examples |
 |---|---|
@@ -94,6 +94,9 @@ Utilities and dedicated tools:
 | `adw.health_risk`, `adw.county_*`, `adw.obesity_risk`, `adw.air_quality_risk` | Geo-health lookups by ZIP, city or county | read-only |
 | `adw.feedback` | Lets an agent send feedback about the data | write (additive) |
 | `adw.alerts` | List, follow or unfollow score alerts on your own account | write (unfollow deletes a follow) |
+| `adw.catalog_search` | Search the worldwide master catalog (~93k APIs, data portals, services and MCP servers) by words and filters. 1 credit per call; needs your own free account key (the demo key is not accepted) | read-only |
+| `adw.catalog_get` | The full record for one catalog id. 1 credit per call; needs your own free account key (the demo key is not accepted) | read-only |
+| `adw.catalog_stats` | Catalog counts by kind, access class and status. Free, no key needed | read-only |
 
 Every tool has a `title` and MCP safety annotations (`readOnlyHint`, plus `destructiveHint` on the write tools), so clients can auto-approve the read-only ones.
 
@@ -106,8 +109,8 @@ One credit model across all 315 indices, on REST and MCP alike. Full details: ht
 - **Free account**: API key once you confirm your email, **1,000 free credits** (about 333 standard calls), no card. Caps: 1,000 requests a day, 3,000 a month.
 - **Pay as you go**: top up from $10 (up to $2,000) at 12–15 credits per $1. Credits never expire.
 - **Gold and Platinum plans**: +30% or +50% credits on every top-up, higher limits and dedicated support. Contact us.
-- **Cost per call**: most indices cost 3 credits; Platinum indices 5; geo-health ZIP and county lookups 2. `adw.sample` and `adw.alerts` are free.
-- **Demo key** `adw_free_demo`: free, shared by everyone, rate-limited per IP, and some per-location tools return a fixed demo location.
+- **Cost per call**: most indices cost 3 credits; Platinum indices 5; geo-health ZIP and county lookups 2; `adw.catalog_search` and `adw.catalog_get` 1. `adw.sample`, `adw.alerts` and `adw.catalog_stats` are free.
+- **Demo key** `adw_free_demo`: free, shared by everyone, rate-limited per IP, and some per-location tools return a fixed demo location. It does not work for `adw.catalog_search` or `adw.catalog_get`; use your own free account key for those.
 
 When a cap is hit the API answers `429` with `Retry-After`.
 

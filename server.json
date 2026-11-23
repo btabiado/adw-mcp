@@ -24,7 +24,7 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Your AlpineDataWorks API key as a Bearer token. Try the shared, rate-limited demo key adw_free_demo, or get a free key (1,000 credits) at https://api.alpinedataworks.com/signup. tools/list and adw.sample work without a key.",
+          "description": "Your AlpineDataWorks API key as a Bearer token. Try the shared, rate-limited demo key adw_free_demo, or get a free key (1,000 credits) at https://api.alpinedataworks.com/signup. tools/list, adw.sample and adw.catalog_stats work without a key. The demo key is not accepted by adw.catalog_search or adw.catalog_get (1 credit per call with your own key).",
           "value": "Bearer {api_key}",
           "isRequired": true,
           "isSecret": true,
