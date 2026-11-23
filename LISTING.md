@@ -138,7 +138,7 @@ You are listed as "AlpineDataWorks Intelligence" (since 5 Jul 2026), but the des
 - **Short description (≤100, registry)**: Economic, market & US geo-health intelligence plus a worldwide API catalog, as 322 MCP tools.
 - **One-liner (≤200)**: Decision-grade economic, market and US geo-health intelligence: 315 scored indices with drivers, confidence and sources, ready for Claude to query.
 - **Endpoint**: https://api.alpinedataworks.com/mcp (Streamable HTTP)
-- **Auth**: `Authorization: Bearer <key>`; demo `adw_free_demo`; free key at https://api.alpinedataworks.com/signup
+- **Auth**: `Authorization: Bearer <key>`; demo `adw_free_demo` (not accepted by `adw.catalog_search` / `adw.catalog_get`); free key at https://api.alpinedataworks.com/signup
 - **Logo**: https://alpinedataworks.com/favicon.png (256×256 PNG); social card https://alpinedataworks.com/og.png (1200×630)
 - **Website / docs**: https://alpinedataworks.com · https://alpinedataworks.com/docs
 - **Pricing**: https://alpinedataworks.com/pricing
