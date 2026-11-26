@@ -148,4 +148,4 @@ This repository holds the public listing manifest and docs. The server itself is
 - **Console**: https://api.alpinedataworks.com/console
 - **Support**: support@alpinedataworks.com
 
-_Maintained by AlpineDataWorks. Directory submission steps for maintainers: [LISTING.md](./LISTING.md)._
+_Maintained by AlpineDataWorks._
